@@ -8,6 +8,16 @@
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "no-fandomr@werneck-matheus.com",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
   "content_scripts": [
     {
       "matches": [
