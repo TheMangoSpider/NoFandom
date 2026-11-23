@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "No Fandom",
+  "version": "2.0",
+  "description": "Removes Fandom (Wikia) wikis from your search results. Runs locally and collects nothing.",
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/search*",
+        "*://www.bing.com/search*",
+        "*://duckduckgo.com/*",
+        "*://search.brave.com/search*",
+        "*://*.ecosia.org/search*"
+      ],
+      "js": ["hide.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
