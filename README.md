@@ -2,25 +2,19 @@
 
 Browser extension (Manifest V3) that hides Fandom / Wikia wikis from search results.
 
-Tested: Brave Search, Ecosia, Google, Bing, DuckDuckGo.
-Google is matched on `google.com` and the main country domains listed in `manifest.json`.
+## Compatible with:
+Google, Brave Search, Ecosia, Bing, DuckDuckGo.
 
-## Features
-- Hides every Fandom / Wikia result, whether or not an independent wiki exists.
-- A small "N Fandom results hidden" pill with a Show / Hide again button.
-- Ecosia results are hidden by CSS before first paint; other sites are hidden right before paint.
-- Only changed parts of the page are examined, so it stays cheap on dynamic pages.
+## What it does:
+- Hides every Fandom/Wikia result cause they suck
+- Shows how many results were hidden
 - No permissions, no network requests, no data collected (see PRIVACY.md).
 
-## Install (unpacked)
-`brave://extensions` or `chrome://extensions` -> Developer mode -> Load unpacked -> pick this folder.
+## How it finds fandom sites:
+A link whose host is on fandom.com / wikia.com / wikia.org.
+Text that mentions fandom.com will not be blocked.
 
-## Adding a search engine
-1. Add its results URL to `matches` in `manifest.json` (country domains each need their own entry).
-2. Try it. If part of a result is left behind, add the domain and selectors for the element
-   wrapping one whole result to `SITE_RESULT_SELECTORS` in `hide.js` (outermost first).
-3. Optional: add an early CSS rule in `hide.css` like the Ecosia one to avoid any flash.
-
-## How a result is recognised
-A link whose host is on fandom.com / wikia.com / wikia.org, or a short text line that starts with
-such an address (the grey URL line under a result). Text that merely mentions fandom.com does not count.
+## Why make this?:
+I am aware of the Indie Wiki Buddy extension, but I ran into problems with it when the wikis were too niche.
+Since Indie Wiki Buddy only removes Fandom links if there is an alternative, I just want them to be removed always.
+Despite these problems, I still recommend [Indie Wiki Buddy](https://getindie.wiki/) if you don't want Fandom to always be blocked
