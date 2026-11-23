@@ -1,0 +1,18 @@
+/* Marked results. The script sets data-nofandom on the block that wraps one whole result. */
+[data-nofandom="hidden"] {
+  display: none !important;
+}
+[data-nofandom="shown"] {
+  opacity: 0.5 !important;
+  outline: 2px dashed #d63031 !important;
+  outline-offset: 2px !important;
+}
+
+/* Ecosia: hide Fandom results from the very first paint, before the script has run.
+   Switched off while the user has chosen "Show". */
+html:not([data-nofandom-reveal]) .mainline__result-wrapper:has(:is(
+  a[href*=".fandom.com/"], a[href*="//fandom.com/"],
+  a[href*=".wikia.com/"], a[href*=".wikia.org/"]
+)) {
+  display: none !important;
+}
